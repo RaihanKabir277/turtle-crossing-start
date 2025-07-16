@@ -25,12 +25,21 @@ while game_is_on:
     #random cars generator
     cars.create_cars()
     cars.car_move()
+
+    #detect the colision with cars here
+
+    for car in cars.all_cars:
+        if car.distance(player) < 25:
+            game_is_on = False
+
+
+
     #detect the finish line
     if player.ycor() > 280:
         player.win()
         game_is_on = False
     
-    
+     
 
 
 screen.exitonclick()

@@ -11,7 +11,7 @@ class CarManager:
         self.all_cars = []
 
     def create_cars(self):  
-        random_chance = random.randint(1, 6)
+        random_chance = random.randint(1, 4)
         if random_chance == 1: 
             new_car = Turtle("square")
             new_car.color(random.choice(COLORS))
@@ -25,3 +25,4 @@ class CarManager:
     def car_move(self):
         for car in self.all_cars:
             car.backward(STARTING_MOVE_DISTANCE)
+

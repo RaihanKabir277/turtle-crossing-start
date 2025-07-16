@@ -35,8 +35,10 @@ while game_is_on:
 
 
     #detect the finish line
-    if player.ycor() > 280:
-        player.win()
+    if player.win():
+        player.goto_start()
+        cars.speed_increment()
+    else:
         game_is_on = False
     
      

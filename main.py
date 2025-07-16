@@ -12,6 +12,7 @@ screen.tracer(0)
 
 player = Player()
 cars = CarManager()
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(player.up, "Up")
@@ -37,9 +38,10 @@ while game_is_on:
     #detect the finish line
     if player.win():
         player.goto_start()
+        scoreboard.level_up()
+        scoreboard.score_up()
         cars.speed_increment()
-    else:
-        game_is_on = False
+    
     
      
 
